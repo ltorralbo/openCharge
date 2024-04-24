@@ -1,0 +1,36 @@
+
+<div class="main-container">
+  <div class="mapa">
+    <div class="mapa">
+      <div id="map"></div>
+    </div>
+  </div>
+  <div class="table-section">
+    <table id="chargingPointsTable">
+      <thead>
+        <tr>
+          <th (click)="sortTable(0)">ID</th>
+          <th (click)="sortTable(1)">Estado</th>
+          <th (click)="sortTable(2)">Operador</th>
+          <th (click)="sortTable(3)">N° Conexiones</th>
+          <th (click)="sortTable(4)">Coordenadas</th>
+          <th (click)="sortTable(5)">País</th>
+        </tr>
+        <tr>
+          <td><input type="text" (keyup)="filterTable(0, $event)" placeholder="Buscar por ID" /></td>
+          <td><input type="text" (keyup)="filterTable(1, $event)" placeholder="Buscar por Estado" /></td>
+          <td><input type="text" (keyup)="filterTable(2, $event)" placeholder="Buscar por Operador" /></td>
+          <td><input type="text" (keyup)="filterTable(3, $event)" placeholder="Buscar por N° Conexiones" /></td>
+          <td><input type="text" (keyup)="filterTable(4, $event)" placeholder="Buscar por Coordenadas" /></td>
+          <td><input type="text" (keyup)="filterTable(5, $event)" placeholder="Buscar por País" /></td>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+    <div class="pagination-controls">
+      <button (click)="prevPage()">Anterior</button>
+      <span>{{ currentPage }}</span> de <span>{{ totalPages }}</span>
+      <button (click)="nextPage()">Siguiente</button>
+    </div>
+  </div>
+</div>

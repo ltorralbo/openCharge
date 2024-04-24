@@ -1,0 +1,115 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(51, 120, 217, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  .mapa {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 2rem;
+
+    #map {
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(51, 120, 217, 0.1);
+    }
+  }
+
+  .table-section {
+    width: 100%;
+
+    table {
+      width: 100%;
+      margin-bottom: 1rem;
+      border-spacing: 0;
+      border: 2px solid #ddd; /* Línea por fuera de la tabla */
+
+      th,
+      td {
+        padding: 0.4rem 0.8rem;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        border-right: 1px solid #ddd; /* Línea sutil entre columnas */
+        font-size: 0.8rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 140px;
+      }
+
+      
+      th:last-child,
+      td:last-child {
+        border-right: none; /* Remover la línea sutil de la última columna */
+      }
+
+      th {
+        background-color: lightblue;
+        color: #ecf0f1;
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+
+      input[type="text"] {
+        padding: 0.4rem;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 0.75rem;
+        &:focus {
+          outline: none;
+          border-color: #333;
+        }
+      }
+    }
+
+    .pagination-controls {
+      display: flex;
+      justify-content: flex-start; /* Alinear a la izquierda */
+      align-items: center;
+      width: 50%; /* Ocupa máximo el 50% del ancho */
+
+      button {
+        background-color: lightblue;
+        color: white;
+        padding: 0.4rem 0.8rem;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 0.8rem;
+        &:hover {
+          background-color: rgba(51, 120, 217, 0.1);
+        }
+        &:disabled {
+          background-color: #c0c0c0;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .main-container {
+    padding: 0.5rem;
+
+    .table-section {
+      margin-top: 1rem;
+    }
+  }
+}
