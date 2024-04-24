@@ -1,0 +1,46 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Charger {
+  id: ID!
+  status: String!
+  operator: String!
+  connections: Int!
+  latitude: String!
+  longitude: String!
+  country: String!
+  power: Int!
+}
+
+type Query {
+  chargers: [Charger!]!
+  charger(id: ID!): Charger!
+}
+
+type Mutation {
+  createCharger(createChargerInput: CreateChargerInput!): Charger!
+  updateCharger(updateChargerInput: UpdateChargerInput!): Charger!
+  removeCharger(id: Int!): Charger!
+}
+
+input CreateChargerInput {
+  status: String!
+  operator: String!
+  connections: Int!
+  latitude: String!
+  longitude: String!
+  country: String!
+  power: Int!
+}
+
+input UpdateChargerInput {
+  status: String
+  operator: String
+  connections: Int
+  latitude: String
+  longitude: String
+  country: String
+  power: Int
+  id: Int!
+}
